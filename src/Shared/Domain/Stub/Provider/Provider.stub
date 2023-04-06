@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+namespace GS\Shared\Infrastructure\Lumen\Provider;
+
+use Illuminate\Support\ServiceProvider;
+
+class $CLASS_NAME$ extends ServiceProvider
+{
+    public function register()
+    {
+        $this->app->bind('Interface', 'Implementation');
+
+        $this->app->tag([], 'domain_event_subscriber');
+
+        $this->app->tag([], 'domain_query_handler');
+
+        $this->app->tag([], 'domain_command_handler');
+    }
+
+    public function __invoke() : string
+    {
+        return static::class;
+    }
+}

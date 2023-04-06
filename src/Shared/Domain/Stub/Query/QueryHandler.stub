@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace $NAMESPACE$;
+
+use GS\Shared\Domain\Bus\Query\QueryHandler;
+use GS\Shared\Domain\Bus\Query\Response;
+
+final class $CLASS_NAME$Handler implements QueryHandler
+{
+    public function __construct()
+    {
+    }
+
+    public function __invoke($CLASS_NAME$ $query): Response // Change for {Module}Response
+    {
+    }
+}
+
