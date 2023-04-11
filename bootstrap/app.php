@@ -86,8 +86,8 @@ $app->middleware([
     Fruitcake\Cors\HandleCors::class,
 ]);
 $app->routeMiddleware([
-    'cors' => App\Http\Middleware\CorsMiddleware::class
-    //'auth' => App\Http\Middleware\Authenticate::class,
+    'cors' => App\Http\Middleware\CorsMiddleware::class,
+    'auth' => App\Http\Middleware\Authenticate::class,
 ]);
 
 /*
@@ -102,7 +102,7 @@ $app->routeMiddleware([
 */
 
 // $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(GS\Shared\Infrastructure\Lumen\Provider\CQRSServiceProvider::class);
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);

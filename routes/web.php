@@ -38,3 +38,12 @@ $router->group(['prefix' => 'v1', 'middleware' => 'cors'], function () use ($rou
     }
 });
 
+$router->group(['middleware' => 'auth'], function () use ($router) {
+    $router->get('/', function () {
+        // Uses Auth Middleware
+    });
+
+    $router->get('user/profile', function () {
+        // Uses Auth Middleware
+    });
+});
