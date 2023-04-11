@@ -2,14 +2,12 @@
 declare (strict_types=1);
 namespace GS\CarneIUDigital\Authentication\Domain;
 
-use GS\CarneIUDigital\Authentication\Domain\ValueObjects\AuthPassword;
-use GS\CarneIUDigital\Authentication\Domain\ValueObjects\AuthEmail;
-use GS\CarneIUDigital\Authentication\Domain\ValueObjects\AuthRole;
-use GS\CarneIUDigital\Authentication\Domain\ValueObjects\AuthUsername;
+use GS\Authentication\Domain\ValueObjects\AuthEmail;
+use GS\Authentication\Domain\ValueObjects\AuthPassword;
+use GS\Authentication\Domain\ValueObjects\AuthUsername;
 
 final class Authentication{
     public function __construct(
-        private AuthRole $role,
         private AuthUsername $username,
         private AuthEmail $email,
         private AuthPassword $password
@@ -18,14 +16,13 @@ final class Authentication{
         
     }
     public static function Create(
-        AuthRole $role,
+        
         AuthUsername $username,
         AuthEmail $email,
         AuthPassword $password
     ):self{
         return new self
         (        
-        $role,
         $username,
         $email,
         $password
@@ -33,11 +30,6 @@ final class Authentication{
         }
 
   
-    public function role():AuthRole
-    {
-        return $this->role;
-    }
-    
     public function username():AuthUsername
     {
         return $this->username;
@@ -53,8 +45,7 @@ final class Authentication{
     }
     public function ToPrimitivesArray()
     {
-        return [ 
-            'role'=>$this->email()->value(),          
+        return [           
             'email'=>$this->email()->value(),
             'username'=>$this->username()->value(),
             'password'=>$this->password()->value()

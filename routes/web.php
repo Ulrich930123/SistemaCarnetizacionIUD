@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HealthCheckController;
+use App\Http\Controllers\User\UserCreateController;
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
@@ -15,12 +16,14 @@ use App\Http\Controllers\HealthCheckController;
 |
 */
 
+
 $router->group(['prefix' => 'v1', 'middleware' => 'cors'], function () use ($router) {
 
     /*
      * Function to load route files automatically from routers folder
     */
     $router->get('/health-check', HealthCheckController::class);
+    
     
     foreach (scandir(dirname(__FILE__)) as $dir) {
         $dirname = dirname(__FILE__) . DIRECTORY_SEPARATOR . $dir;
