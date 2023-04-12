@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 final class EloquentUserRepository implements UserRepository{
     public function Create(User $user){
-        DB::table('users')->insert($user->ToPrimitivesArray());
+        DB::table('user')->insert($user->ToPrimitivesArray());
     }
 }

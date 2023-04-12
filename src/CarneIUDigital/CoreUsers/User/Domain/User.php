@@ -31,7 +31,7 @@ final class User{
             $password
         );
         }
-        public function userId():UserId
+        public function id():UserId
         {
             return $this->userId;
         }
@@ -52,6 +52,7 @@ final class User{
     public function ToPrimitivesArray()
     {
         return [ 
+            'id'=>$this->id()->value(),
             'email'=>$this->email()->value(),
             'username'=>$this->username()->value(),
             'password'=>$this->password()->value()
