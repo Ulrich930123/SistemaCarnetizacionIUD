@@ -2,19 +2,21 @@
 
 declare(strict_types=1);
 
-namespace GS\CarneIUDigital\CoreUsers\User\Application;
+namespace GS\CardIUDigital\User\Application;
 
+use GS\CardIUDigital\User\Domain\ValueObjects\UserEmail;
+use GS\CardIUDigital\User\Domain\ValueObjects\UserId;
+use GS\CardIUDigital\User\Domain\ValueObjects\UserPassword;
+use GS\CardIUDigital\User\Domain\ValueObjects\UserUsername;
 use GS\Shared\Domain\Bus\Command\CommandHandler;
-use GS\CarneIUDigital\CoreUsers\User\Domain\ValueObjects\UserId;
-use GS\CarneIUDigital\CoreUsers\User\Domain\ValueObjects\UserEmail;
-use GS\CarneIUDigital\CoreUsers\User\Domain\ValueObjects\UserPassword;
-use GS\CarneIUDigital\CoreUsers\User\Domain\ValueObjects\UserUsername;
+
 
 
 final class CreateUserCommandHandler implements CommandHandler
 {
     public function __construct(private CreateUserService $service)
     {
+       
         
     }
 

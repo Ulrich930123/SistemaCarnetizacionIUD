@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GS\CarneIUDigital\CoreUsers\User\Application;
+namespace GS\CardIUDigital\User\Application;
 
 use GS\Shared\Domain\Bus\Command\Command;
 use GS\Shared\Domain\ValueObject\Uuid;
@@ -12,10 +12,11 @@ final class CreateUserCommand implements Command
 {
     public function __construct(
         
-        private $id,
-        private $name,
-        private $email,
-        private $password
+        private string $id,
+        private string $name,
+        private string $email,
+        private string $password
+        
 
     ) {   
     }
@@ -37,6 +38,6 @@ final class CreateUserCommand implements Command
 
     public function password(): string
     {
-        return $this->password();
+        return $this->password;
     }
 }
