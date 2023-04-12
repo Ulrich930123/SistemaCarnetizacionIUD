@@ -17,7 +17,7 @@ use App\Http\Controllers\User\UserCreateController;
 */
 
 
-$router->group(['prefix' => 'v1', 'middleware' => 'cors'], function () use ($router) {
+$router->group(['prefix' => 'v1'], function () use ($router) {
 
     /*
      * Function to load route files automatically from routers folder
